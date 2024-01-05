@@ -1259,7 +1259,8 @@ Puppet::ResourceApi.register_type(
       DESC
     },
     reject: {
-      type: "Optional[Enum['icmp-net-unreachable', 'icmp-host-unreachable', 'icmp-port-unreachable', 'icmp-proto-unreachable',
+      # workaround for https://github.com/puppetlabs/puppetlabs-firewall/issues/1184
+      type: "Optional[Enum['tcp-reset', 'icmp-net-unreachable', 'icmp-host-unreachable', 'icmp-port-unreachable', 'icmp-proto-unreachable',
                               'icmp-net-prohibited', 'icmp-host-prohibited', 'icmp-admin-prohibited', 'icmp6-no-route', 'no-route',
                               'icmp6-adm-prohibited', 'adm-prohibited', 'icmp6-addr-unreachable', 'addr-unreach', 'icmp6-port-unreachable']]",
       desc: <<-DESC
